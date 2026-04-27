@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diana Sydorenko — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100;200;300;400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #2B3921;
+  --cream: #FFF7EA;
+  --cream-dark: #f0e8d6;
+  --text-mid: #4a4a3a;
+  --text-light: #8a8a7a;
+  --accent: #2B3921;
+  --accent-light: rgba(255,247,234,0.5);
+}
+
+/* Cy Grotesk Grand not available via Google Fonts — using Lexend Giga as display, system grotesque as body */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #e8dfd0;
+  color: var(--green);
+  font-weight: 300;
+  font-size: 13px;
+}
+
+.page { width: 900px; margin: 0 auto; background: var(--cream); }
+
+/* ── COVER ── */
+.cover { display: grid; grid-template-columns: 58% 42%; min-height: 300px; }
+
+.cover-left {
+  background: var(--green);
+  padding: 52px 52px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.cv-label {
+  font-size: 8px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255,247,234,0.35);
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.name {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 42px;
+  font-weight: 100;
+  color: var(--cream);
+  line-height: 1.05;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.name span {
+  display: block;
+  font-weight: 200;
+  opacity: 0.6;
+  font-size: 38px;
+}
+
+.role-tag {
+  font-size: 8px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,247,234,0.5);
+  font-weight: 400;
+}
+
+.cover-right {
+  background: var(--cream-dark);
+  padding: 44px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cover-tagline {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+  color: var(--green);
+  line-height: 1.85;
+  letter-spacing: -0.2px;
+  border-left: 1.5px solid var(--green);
+  padding-left: 18px;
+  opacity: 0.75;
+}
+
+.contacts-block { margin-top: 28px; }
+
+.contact-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(43,57,33,0.1);
+}
+.contact-row:last-child { border-bottom: none; }
+
+.c-label {
+  font-size: 7.5px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.45;
+  width: 64px;
+  flex-shrink: 0;
+  font-weight: 400;
+}
+
+.c-value {
+  font-size: 12px;
+  color: var(--text-mid);
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+/* ── BODY GRID ── */
+.body-grid { display: grid; grid-template-columns: 36% 64%; }
+
+/* LEFT */
+.left-panel { background: var(--green); padding: 44px 36px 52px; }
+
+.panel-section { margin-bottom: 34px; }
+.panel-section:last-child { margin-bottom: 0; }
+
+.panel-label {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 7px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,247,234,0.4);
+  font-weight: 300;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,247,234,0.1);
+}
+
+.edu-name {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  color: var(--cream);
+  line-height: 1.45;
+  margin-bottom: 7px;
+  letter-spacing: -0.3px;
+}
+
+.edu-detail {
+  font-size: 10.5px;
+  color: rgba(255,247,234,0.38);
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+.skill-group { margin-bottom: 16px; }
+.skill-group:last-child { margin-bottom: 0; }
+
+.skill-group-title {
+  font-size: 7px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(255,247,234,0.25);
+  margin-bottom: 7px;
+  font-weight: 400;
+}
+
+.skill-pill {
+  font-size: 11px;
+  color: rgba(255,247,234,0.62);
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,247,234,0.06);
+  display: block;
+  letter-spacing: 0.1px;
+}
+
+.soft-row { display: flex; align-items: center; gap: 10px; padding: 4.5px 0; }
+
+.soft-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--cream);
+  flex-shrink: 0;
+  opacity: 0.3;
+}
+
+.soft-text { font-size: 11px; color: rgba(255,247,234,0.58); }
+
+.lang-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 5.5px 0;
+  border-bottom: 1px solid rgba(255,247,234,0.06);
+}
+.lang-name { font-size: 11.5px; color: rgba(255,247,234,0.65); }
+.lang-level {
+  font-size: 7.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,247,234,0.3);
+  font-weight: 400;
+}
+
+/* RIGHT */
+.right-panel { background: var(--cream); padding: 44px 44px 52px; }
+
+.exp-label {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 7px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.4;
+  font-weight: 300;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(43,57,33,0.1);
+}
+
+.job { }
+
+.job-meta { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 3px; }
+
+.job-title {
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: var(--green);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.job-period {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 5px;
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.job-company {
+  font-size: 8px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  opacity: 0.38;
+  margin-bottom: 9px;
+  font-weight: 400;
+}
+
+.job-desc {
+  font-size: 12px;
+  color: var(--text-light);
+  line-height: 1.65;
+  margin-bottom: 9px;
+  font-style: italic;
+}
+
+.resp-list { list-style: none; padding: 0; }
+
+.resp-list li {
+  font-size: 11px;
+  color: var(--text-mid);
+  padding: 3px 0 3px 14px;
+  position: relative;
+  line-height: 1.55;
+}
+
+.resp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.3;
+}
+
+.job-divider { height: 1px; background: rgba(43,57,33,0.07); margin: 24px 0; }
+
+@media print { body { background: #fff; } .page { margin: 0; width: 100%; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-left">
+      <div class="cv-label">Curriculum Vitae</div>
+      <div class="name">
+        Diana
+        <span>Sydorenko</span>
+      </div>
+      <div class="role-tag">Marketing &nbsp;&middot;&nbsp; Creative Direction &nbsp;&middot;&nbsp; SMM</div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-tagline">
+        Marketing professional with 6+ years across SMM, paid social, and creative leadership &mdash; from hands-on content to managing full teams and brand strategy.
+      </div>
+      <div class="contacts-block">
+        <div class="contact-row">
+          <span class="c-label">Instagram</span>
+          <span class="c-value">@diana.sydorenkooo</span>
+        </div>
+        <div class="contact-row">
+          <span class="c-label">Telegram</span>
+          <span class="c-value">@dianasydorenko</span>
+        </div>
+        <div class="contact-row">
+          <span class="c-label">Phone</span>
+          <span class="c-value">+48 733 424 215</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-grid">
+
+    <div class="left-panel">
+
+      <div class="panel-section">
+        <div class="panel-label">Education</div>
+        <div class="edu-name">Civitas University<br>Warsaw</div>
+        <div class="edu-detail">Bachelor&rsquo;s Degree<br>Digital Marketing<br>Faculty of Management</div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-label">Hard Skills</div>
+        <div class="skill-group">
+          <div class="skill-group-title">Advertising</div>
+          <span class="skill-pill">Meta Ads (Facebook &amp; Instagram)</span>
+          <span class="skill-pill">Campaign strategy &amp; scaling</span>
+          <span class="skill-pill">KPI tracking &amp; analytics</span>
+          <span class="skill-pill">Budget management</span>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Content &amp; Design</div>
+          <span class="skill-pill">Figma / Canva</span>
+          <span class="skill-pill">InShot / CapCut</span>
+          <span class="skill-pill">Reels &amp; TikTok production</span>
+          <span class="skill-pill">Photo &amp; video content</span>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Strategy &amp; Tools</div>
+          <span class="skill-pill">Google Sheets / Analytics</span>
+          <span class="skill-pill">Marketing strategy</span>
+          <span class="skill-pill">Team &amp; project management</span>
+          <span class="skill-pill">Influencer &amp; partner relations</span>
+          <span class="skill-pill">Print &amp; brand identity</span>
+        </div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-label">Soft Skills</div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Strategic thinking</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Creative direction</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Team leadership</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Cross-functional communication</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Adaptability across niches</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Attention to detail</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Initiative &amp; ownership</div></div>
+        <div class="soft-row"><div class="soft-dot"></div><div class="soft-text">Time management</div></div>
+      </div>
+
+      <div class="panel-section">
+        <div class="panel-label">Languages</div>
+        <div class="lang-row"><span class="lang-name">Ukrainian</span><span class="lang-level">Native</span></div>
+        <div class="lang-row"><span class="lang-name">Russian</span><span class="lang-level">Fluent</span></div>
+        <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Professional</span></div>
+        <div class="lang-row"><span class="lang-name">Polish</span><span class="lang-level">Conversational</span></div>
+      </div>
+
+    </div>
+
+    <div class="right-panel">
+      <div class="exp-label">Experience</div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="job-title">Creative Director</div>
+          <div class="job-period">2025 &mdash; Present</div>
+        </div>
+        <div class="job-company">Marketing Agency</div>
+        <div class="job-desc">Leading creative strategy and content production across multiple brands and niches.</div>
+        <ul class="resp-list">
+          <li>Developing marketing strategies for brand growth and audience expansion</li>
+          <li>Writing content plans and directing scripts for regular and campaign shoots</li>
+          <li>Producing and shooting TikTok content independently</li>
+          <li>Managing projects end-to-end: team coordination, client communication, performance analysis</li>
+        </ul>
+      </div>
+
+      <div class="job-divider"></div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="job-title">Head of Marketing</div>
+          <div class="job-period">2024 &mdash; 2026</div>
+        </div>
+        <div class="job-company">911 Aesthetic Clinic</div>
+        <div class="job-desc">Two years leading the full marketing function of an aesthetic medicine and cosmetology clinic.</div>
+        <ul class="resp-list">
+          <li>Managing a team of advertisers, designers, story makers, and video editors</li>
+          <li>Building partnerships with influencers, local businesses, organizing collaborative events</li>
+          <li>Representing the clinic at industry events and public appearances</li>
+          <li>Overseeing print production: certificates, vouchers, packaging, branded materials</li>
+          <li>Conducting market and competitor analysis; delivering regular performance reports</li>
+          <li>Creating and executing marketing strategies aligned with business goals</li>
+        </ul>
+      </div>
+
+      <div class="job-divider"></div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="job-title">Meta Ads Specialist</div>
+          <div class="job-period">2024</div>
+        </div>
+        <div class="job-company">Freelance &amp; Agency</div>
+        <div class="job-desc">Managing paid social campaigns across beauty, F&amp;B, personal brands, e-commerce, and education.</div>
+        <ul class="resp-list">
+          <li>Developing ad strategies with full market, competitor, and audience analysis</li>
+          <li>Creating advertising creatives, launching and scaling campaigns</li>
+          <li>Managing budgets and consistently meeting KPI targets</li>
+          <li>Coordinating outsourced teams for large-scale launches</li>
+        </ul>
+      </div>
+
+      <div class="job-divider"></div>
+
+      <div class="job">
+        <div class="job-meta">
+          <div class="job-title">SMM Specialist</div>
+          <div class="job-period">2020 &mdash; 2024</div>
+        </div>
+        <div class="job-company">Various Clients &amp; Niches</div>
+        <div class="job-desc">Four years across HORECA, beauty, real estate, fashion, alcohol brands, and education.</div>
+        <ul class="resp-list">
+          <li>Developing content strategies and editorial plans tailored to each brand&rsquo;s audience</li>
+          <li>Creating and executing content: posts, stories, and short-form video (Reels)</li>
+          <li>Conducting market, competitor, and target audience research</li>
+          <li>Maintaining visual identity and brand consistency</li>
+          <li>Designing ad creatives for targeted advertising campaigns</li>
+          <li>Delivering regular performance reports and insights</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
